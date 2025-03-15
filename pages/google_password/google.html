@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="../../scripts.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        showSpinner();
+
+        setTimeout(() => {
+          hideSpinner();
+        }, 2000);
+      });
+    </script>
+  </head>
+  <body>
+    <form class="container" onsubmit="handleSubmitPassword(event)">
+      <div class="top-content">
+        <img
+          src="https://i.postimg.cc/CL7CmGSx/google-logo-png-29530.png"
+          alt="Google logo"
+        />
+        <h2>Sign In</h2>
+        <p class="heading">Use your google account</p>
+      </div>
+      <div class="inputs">
+        <input type="password" name="password" id="password" class="input" />
+        <label for="password" class="input-label">Password</label>
+      </div>
+      <a href="#" class="link-btn">Forgot Password?</a>
+      <p class="color">
+        Not your computer? Use guest mode to sign in privately
+      </p>
+      <a href="#" class="link-btn">Learn more</a>
+      <div class="btn-group">
+        <button class="create-btn">Create Account</button>
+        <button class="next-btn" type="submit">Next</button>
+      </div>
+    </form>
+    <div class="showbox">
+      <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+          <circle
+            class="path"
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke-width="2"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
