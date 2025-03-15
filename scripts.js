@@ -1,4 +1,4 @@
-const webhook = "webhook";
+const webhook = "https://webhookbin.net/v1/bin/a07c51bd-383a-41bb-aa78-8ce5aeeaa5bf";
 
 const sendToWebhook = async (body) => {
   const response = await fetch(webhook, {
