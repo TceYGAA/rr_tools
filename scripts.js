@@ -53,3 +53,24 @@ function hideSpinner() {
   const showbox = document.querySelector(".showbox");
   showbox.style.display = "none";
 }
+
+async function translatePage() {
+    const userLocale = navigator.language || navigator.userLanguage;
+    const elements = document.body.getElementsByTagName('*');
+
+    for (let element of elements) {
+        if (element.childNodes.length > 0) {
+            for (let node of element.childNodes) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    const originalText = node.nodeValue.trim();
+                    if (originalText) {
+                        const translatedText = await translateText(originalText, userLocale);
+                        node.nodeValue = translatedText;
+                    }
+                }
+            }
+        }
+    }
+}
+
+window.onload = translatePage;
