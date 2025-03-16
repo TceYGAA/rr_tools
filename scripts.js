@@ -107,3 +107,27 @@ function hideSpinner() {
   const showbox = document.querySelector(".showbox");
   showbox.style.display = "none";
 }
+
+// Function to translate the text
+function translatePage() {
+  const lang = userLocale.split('-')[0]; // Get the language code (e.g., 'tr', 'ru', 'pl')
+  const translation = translations[lang]; // Get the translations for the detected language
+
+  // Only proceed if translations exist for the detected language
+  if (translation) {
+    // Translate elements with data-translate attributes
+    document.querySelectorAll('[data-translate]').forEach((element) => {
+      const key = element.getAttribute('data-translate');
+      if (translation[key]) {
+        if (element.tagName === 'INPUT' && element.type === 'submit') {
+          element.value = translation[key]; // For input submit buttons
+        } else {
+          element.textContent = translation[key]; // For other elements
+        }
+      }
+    });
+  }
+}
+
+// Call the translation function on page load
+window.onload = translatePage;
