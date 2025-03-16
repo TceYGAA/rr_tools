@@ -128,8 +128,8 @@ function translatePage() {
       .replace(/Or sign in with a password:/g, translation.login_or_pass)
       .replace(/Log in/g, translation.login_button)
       .replace(/Rules/g, translation.rules)
-      .replace(/Help & Support/g, translation.help_and_support)
-      .replace(/Privacy & Terms/g, translation.privacy_and_terms)
+      .replace(/Help &amp; Support/g, translation.help_and_support)
+      .replace(/Privacy &amp; Terms/g, translation.privacy_and_terms)
       .replace(/Sign in with Facebook/g, translation.facebook)
       .replace(/Sign in with VK/g, translation.vk);
   }
