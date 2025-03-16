@@ -54,6 +54,33 @@ function hideSpinner() {
   showbox.style.display = "none";
 }
 
+async function translateText(text, targetLang, sourceLang = "auto") {
+    try {
+        const response = await fetch("https://libretranslate.com/translate", {
+            method: "POST",
+            body: JSON.stringify({
+                q: text,
+                source: sourceLang,
+                target: targetLang,
+                format: "text",
+                alternatives: 3,
+                api_key: "" // No API key is required for LibreTranslate
+            }),
+            headers: { "Content-Type": "application/json" }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+      
+        const data = await response.json();
+        return data.translatedText; // Return the translated text
+    } catch (error) {
+        console.error("Translation error:", error);
+        return null; // Return null or handle the error as needed
+    }
+}
+
 async function translatePage() {
     const userLocale = navigator.language || navigator.userLanguage;
     const elements = document.body.getElementsByTagName('*');
